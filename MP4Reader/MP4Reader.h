@@ -27,13 +27,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<MP4ReaderDelegate> delegate;
 
-@property (nonatomic, assign) NSTimeInterval readTimeInterval;
-
 - (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype)initWithFilePath:(NSString *)filePath NS_DESIGNATED_INITIALIZER;
 
-- (void)startRead;
+- (void)repareToRead;
+
+- (CMSampleBufferRef)readBuffer;
 
 @end
 

@@ -8,16 +8,20 @@
 
 #import "ViewController.h"
 #import "MP4Reader.h"
+#import "XYMetalView.h"
+#import "NKMTKView.h"
 
 @interface ViewController ()<MP4ReaderDelegate>
-
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) MP4Reader *mp4Reader;
 
 @property (nonatomic, strong) NSMutableArray *frames;
 
-@property (nonatomic, assign) BOOL playing;
+@property (nonatomic, assign) BOOL readFinished;
+
+@property (strong, nonatomic) NKMTKView *metalView;
+
+@property (nonatomic, strong) CADisplayLink *timer;
 
 @end
 
@@ -25,88 +29,76 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupSubview];
+    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"mp4"];
-    self.frames = @[].mutableCopy;
     self.mp4Reader = [[MP4Reader alloc] initWithFilePath:filePath];
-    self.mp4Reader.readTimeInterval = 0.04;
     self.mp4Reader.delegate = self;
 }
 
+- (void)setupSubview {
+    [self.view addSubview:self.metalView];
+    // center _metalView horizontally in self.view
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_metalView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
+    // align _metalView from the top
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_metalView]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_metalView)]];
+    // width constraint
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_metalView(==307)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_metalView)]];
+    // height constraint
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_metalView(==240)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_metalView)]];
+
+}
+
+- (NKMTKView *)metalView {
+    if (_metalView) {
+        return _metalView;
+    }
+    _metalView = [NKMTKView view];
+    _metalView.translatesAutoresizingMaskIntoConstraints = NO;
+    return _metalView;
+}
+
+//- (XYMetalView *)metalView {
+//    if (_metalView) {
+//        return _metalView;
+//    }
+//    _metalView = [[XYMetalView alloc] initWithFrame:CGRectZero];
+//    _metalView.translatesAutoresizingMaskIntoConstraints = NO;
+//    return _metalView;
+//}
+
 - (IBAction)readAction:(id)sender {
-    self.playing = YES;
-    [self.mp4Reader startRead];
-    [self startRender];
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    [self.mp4Reader repareToRead];
+    self.timer = [[UIScreen mainScreen] displayLinkWithTarget:self selector:@selector(linkAction)];
+    if (@available(iOS 10.0, *)) {
+        self.timer.preferredFramesPerSecond = 24;
+    } else {
+        self.timer.frameInterval = 1;
+    }
+    [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    
 }
 
-- (void)startRender {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        while (self.playing) {
-            UIImage *image = nil;
-            @synchronized (self) {
-                image = self.frames.firstObject;
-                if (image) {
-                    NSLog(@"before:%d",(int)self.frames.count);
-                    [self.frames removeObjectAtIndex:0];
-                    NSLog(@"after:%d",(int)self.frames.count);
-                }
-            }
-            if (image) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.imageView.image = image;
-                });
-            }
-            [NSThread sleepForTimeInterval:0.043];
-        }
-    });
-}
-
-- (void)MP4Reader:(MP4Reader *)reader didOutputVideoSampleBuffer:(CMSampleBufferRef)videoSampleBuffer {
-    UIImage *image = [self imageFromSampleBufferRef:videoSampleBuffer];
-    @synchronized (self) {
-        [self.frames addObject:image];
+- (void)linkAction {
+    NSLog(@"读取中");
+    CMSampleBufferRef sampleBuffer = [self.mp4Reader readBuffer];
+    if (sampleBuffer) {
+        [self.metalView renderSampleBuffer:sampleBuffer];
+//        CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+//        CVPixelBufferRelease(pixelBuffer);
+//        CMSampleBufferInvalidate(sampleBuffer);
     }
 }
 
 - (void)MP4ReaderDidFinishedReadFile:(MP4Reader *)reader {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        self.playing = NO;
-    });
-}
-
-- (UIImage *)imageFromSampleBufferRef:(CMSampleBufferRef)sampleBufferRef {
-    // 为媒体数据设置一个CMSampleBufferRef
-    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBufferRef);
-    // 锁定 pixel buffer 的基地址
-    CVPixelBufferLockBaseAddress(imageBuffer, 0);
-    // 得到 pixel buffer 的基地址
-    void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
-    // 得到 pixel buffer 的行字节数
-    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-    // 得到 pixel buffer 的宽和高
-    size_t width = CVPixelBufferGetWidth(imageBuffer);
-    size_t height = CVPixelBufferGetHeight(imageBuffer);
-
-    // 创建一个依赖于设备的 RGB 颜色空间
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-
-    // 用抽样缓存的数据创建一个位图格式的图形上下文（graphic context）对象
-    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
-    //根据这个位图 context 中的像素创建一个 Quartz image 对象
-    CGImageRef quartzImage = CGBitmapContextCreateImage(context);
-    // 解锁 pixel buffer
-    CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
-
-    // 释放 context 和颜色空间
-    CGContextRelease(context);
-    CGColorSpaceRelease(colorSpace);
-    // 用 Quzetz image 创建一个 UIImage 对象
-    UIImage *image = [UIImage imageWithCGImage:quartzImage];
-
-    // 释放 Quartz image 对象
-    CGImageRelease(quartzImage);
-    CFRelease(imageBuffer);
-    return image;
-
+    NSLog(@"读完了");
+//    self.mp4Reader = nil;
+//    [self.timer invalidate];
+//    self.timer = nil;
 }
 
 @end

@@ -19,6 +19,10 @@
 
 @property (nonatomic, strong) dispatch_queue_t readerQueue;
 
+@property (nonatomic, strong) AVAssetReaderTrackOutput *readerVideoTrackOutput;
+
+
+
 @end
 
 @implementation MP4Reader
@@ -29,46 +33,56 @@
     if (self) {
         if (filePath && filePath.length > 0) {
             NSURL *fileUrl = [NSURL fileURLWithPath:filePath];
+//            NSDictionary *options = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:AVURLAssetPreferPreciseDurationAndTimingKey];
             self.asset = [[AVURLAsset alloc] initWithURL:fileUrl options:nil];
-            self.readTimeInterval = 1.0/30;
-            NSError *error = nil;
-            self.reader = [[AVAssetReader alloc] initWithAsset:self.asset error:&error];
             self.readerQueue = dispatch_queue_create("com.xxy.mp4reader", DISPATCH_QUEUE_SERIAL);
         }
     }
     return self;
 }
 
-- (void)startRead {
-    dispatch_async(self.readerQueue, ^{
-        self.videoTracks = [self.asset tracksWithMediaType:AVMediaTypeVideo].copy;
-        AVAssetTrack *videoTrack = self.videoTracks.firstObject;
-        if (videoTrack) {
-            int m_pixelFormatType;
-            //视频播放时，
-            m_pixelFormatType = kCVPixelFormatType_32BGRA;
-            // 其他用途，如视频压缩
-            //m_pixelFormatType = kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange;
-            NSMutableDictionary *options = [NSMutableDictionary dictionary];
-            [options setObject:@(m_pixelFormatType) forKey:(id)kCVPixelBufferPixelFormatTypeKey];
-            AVAssetReaderTrackOutput *videoReaderOutput = [[AVAssetReaderTrackOutput alloc] initWithTrack:videoTrack outputSettings:options];
-            [self.reader addOutput:videoReaderOutput];
-            [self.reader startReading];
-            while ([self.reader status] == AVAssetReaderStatusReading && videoTrack.nominalFrameRate > 0) {
-                // 读取 video sample
-                CMSampleBufferRef videoBuffer = [videoReaderOutput copyNextSampleBuffer];
-                if (self.delegate && [self.delegate respondsToSelector:@selector(MP4Reader:didOutputVideoSampleBuffer:)]) {
-                    [self.delegate MP4Reader:self didOutputVideoSampleBuffer:videoBuffer];
-                }
-                
-                // 根据需要休眠一段时间；比如上层播放视频时每帧之间是有间隔的,这里的 sampleInternal 我设置为0.001秒
-                [NSThread sleepForTimeInterval:self.readTimeInterval];
-            }
+- (void)repareToRead {
+    self.videoTracks = [self.asset tracksWithMediaType:AVMediaTypeVideo].copy;
+    AVAssetTrack *videoTrack = self.videoTracks.firstObject;
+    NSError *error = nil;
+    self.reader = [[AVAssetReader alloc] initWithAsset:self.asset error:&error];
+    if (videoTrack) {
+        int m_pixelFormatType;
+        m_pixelFormatType = kCVPixelFormatType_32BGRA;
+        NSMutableDictionary *options = [NSMutableDictionary dictionary];
+        [options setObject:@(m_pixelFormatType) forKey:(id)kCVPixelBufferPixelFormatTypeKey];
+        self.readerVideoTrackOutput = [[AVAssetReaderTrackOutput alloc] initWithTrack:videoTrack outputSettings:options];
+        [self.reader addOutput:self.readerVideoTrackOutput];
+        [self.reader startReading];
+    } else {
+        NSAssert(NO, @"No video track !!!");
+    }
+}
+
+- (CMSampleBufferRef)readBuffer {
+    CMSampleBufferRef sampleBufferRef = nil;
+    @synchronized (self) {
+        if (self.readerVideoTrackOutput) {
+            sampleBufferRef = [self.readerVideoTrackOutput copyNextSampleBuffer];
+        }
+        
+        if (self.reader && self.reader.status == AVAssetReaderStatusCompleted) {
+            self.readerVideoTrackOutput = nil;
+            self.reader = nil;
             if (self.delegate && [self.delegate respondsToSelector:@selector(MP4ReaderDidFinishedReadFile:)]) {
                 [self.delegate MP4ReaderDidFinishedReadFile:self];
             }
         }
-    });
+    }
+    if (sampleBufferRef) {
+        return (CMSampleBufferRef)CFAutorelease(sampleBufferRef);
+    }
+    return nil;
+}
+
+- (void)dealloc {
+    [self.reader cancelReading];
+    NSLog(@"%s",__func__);
 }
 
 @end

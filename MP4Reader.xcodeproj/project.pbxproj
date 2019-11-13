@@ -16,6 +16,9 @@
 		A91DBEC42373BB3600CD4243 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBEC32373BB3600CD4243 /* main.m */; };
 		A91DBECB2373BBFB00CD4243 /* example.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A91DBECA2373BBFB00CD4243 /* example.mp4 */; };
 		A91DBECE2373BD0B00CD4243 /* MP4Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBECD2373BD0B00CD4243 /* MP4Reader.m */; };
+		A9FC6D35237AAE3A0036CB29 /* XYMetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6D33237AAE3A0036CB29 /* XYMetalView.m */; };
+		A9FC6D38237AAE740036CB29 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6D36237AAE740036CB29 /* Shaders.metal */; };
+		A9FC6D3B237B96210036CB29 /* NKMTKView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6D3A237B96210036CB29 /* NKMTKView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,12 @@
 		A91DBECA2373BBFB00CD4243 /* example.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.mp4; sourceTree = "<group>"; };
 		A91DBECC2373BD0B00CD4243 /* MP4Reader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MP4Reader.h; sourceTree = "<group>"; };
 		A91DBECD2373BD0B00CD4243 /* MP4Reader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MP4Reader.m; sourceTree = "<group>"; };
+		A9FC6D33237AAE3A0036CB29 /* XYMetalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMetalView.m; sourceTree = "<group>"; };
+		A9FC6D34237AAE3A0036CB29 /* XYMetalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYMetalView.h; sourceTree = "<group>"; };
+		A9FC6D36237AAE740036CB29 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		A9FC6D37237AAE740036CB29 /* XYShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYShaderTypes.h; sourceTree = "<group>"; };
+		A9FC6D39237B96210036CB29 /* NKMTKView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKMTKView.h; sourceTree = "<group>"; };
+		A9FC6D3A237B96210036CB29 /* NKMTKView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKMTKView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +81,12 @@
 				A91DBEB52373BB3500CD4243 /* SceneDelegate.m */,
 				A91DBEB72373BB3500CD4243 /* ViewController.h */,
 				A91DBEB82373BB3500CD4243 /* ViewController.m */,
+				A9FC6D39237B96210036CB29 /* NKMTKView.h */,
+				A9FC6D3A237B96210036CB29 /* NKMTKView.m */,
+				A9FC6D36237AAE740036CB29 /* Shaders.metal */,
+				A9FC6D37237AAE740036CB29 /* XYShaderTypes.h */,
+				A9FC6D34237AAE3A0036CB29 /* XYMetalView.h */,
+				A9FC6D33237AAE3A0036CB29 /* XYMetalView.m */,
 				A91DBECC2373BD0B00CD4243 /* MP4Reader.h */,
 				A91DBECD2373BD0B00CD4243 /* MP4Reader.m */,
 				A91DBEBA2373BB3500CD4243 /* Main.storyboard */,
@@ -156,9 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A91DBECE2373BD0B00CD4243 /* MP4Reader.m in Sources */,
+				A9FC6D38237AAE740036CB29 /* Shaders.metal in Sources */,
+				A9FC6D35237AAE3A0036CB29 /* XYMetalView.m in Sources */,
 				A91DBEB92373BB3500CD4243 /* ViewController.m in Sources */,
 				A91DBEB32373BB3500CD4243 /* AppDelegate.m in Sources */,
 				A91DBEC42373BB3600CD4243 /* main.m in Sources */,
+				A9FC6D3B237B96210036CB29 /* NKMTKView.m in Sources */,
 				A91DBEB62373BB3500CD4243 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -287,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
