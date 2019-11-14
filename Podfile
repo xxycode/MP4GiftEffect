@@ -5,6 +5,7 @@ target 'MP4Reader' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
   pod 'YYImage', '1.0.4'
+  pod 'YYImage/WebP'
   # Pods for MP4Reader
 
 end

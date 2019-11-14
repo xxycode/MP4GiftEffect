@@ -261,6 +261,8 @@
 		A99C8693237D5B58009A27C6 /* 191.png in Resources */ = {isa = PBXBuildFile; fileRef = A99C85A4237D5B57009A27C6 /* 191.png */; };
 		A99C8694237D5B58009A27C6 /* 230.png in Resources */ = {isa = PBXBuildFile; fileRef = A99C85A5237D5B57009A27C6 /* 230.png */; };
 		A99C8695237D5B58009A27C6 /* 018.png in Resources */ = {isa = PBXBuildFile; fileRef = A99C85A6237D5B57009A27C6 /* 018.png */; };
+		A99C869A237D6FC8009A27C6 /* 000_iSpt.png in Resources */ = {isa = PBXBuildFile; fileRef = A99C8699237D6FC8009A27C6 /* 000_iSpt.png */; };
+		A99C86A0237D7034009A27C6 /* 000_iSpt.gif in Resources */ = {isa = PBXBuildFile; fileRef = A99C869F237D7034009A27C6 /* 000_iSpt.gif */; };
 		A9FC6D35237AAE3A0036CB29 /* XYMetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6D33237AAE3A0036CB29 /* XYMetalView.m */; };
 		A9FC6D38237AAE740036CB29 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6D36237AAE740036CB29 /* Shaders.metal */; };
 		A9FC6D3B237B96210036CB29 /* NKMTKView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6D3A237B96210036CB29 /* NKMTKView.m */; };
@@ -532,6 +534,9 @@
 		A99C85A4237D5B57009A27C6 /* 191.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 191.png; sourceTree = "<group>"; };
 		A99C85A5237D5B57009A27C6 /* 230.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 230.png; sourceTree = "<group>"; };
 		A99C85A6237D5B57009A27C6 /* 018.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 018.png; sourceTree = "<group>"; };
+		A99C8699237D6FC8009A27C6 /* 000_iSpt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000_iSpt.png; sourceTree = "<group>"; };
+		A99C869D237D7015009A27C6 /* 000_iSpt.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 000_iSpt.webp; sourceTree = "<group>"; };
+		A99C869F237D7034009A27C6 /* 000_iSpt.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 000_iSpt.gif; sourceTree = "<group>"; };
 		A9FC6D33237AAE3A0036CB29 /* XYMetalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMetalView.m; sourceTree = "<group>"; };
 		A9FC6D34237AAE3A0036CB29 /* XYMetalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYMetalView.h; sourceTree = "<group>"; };
 		A9FC6D36237AAE740036CB29 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
@@ -598,12 +603,10 @@
 				A99C8307237D4572009A27C6 /* PNGSequence */,
 				A99C8305237D4544009A27C6 /* MP4Metal */,
 				A91DBEBA2373BB3500CD4243 /* Main.storyboard */,
-				A91DBECA2373BBFB00CD4243 /* example.mp4 */,
-				A99C8696237D5BA7009A27C6 /* 求婚apng */,
-				A99C830B237D48F8009A27C6 /* 求婚_png序列 */,
 				A91DBEBD2373BB3600CD4243 /* Assets.xcassets */,
 				A91DBEBF2373BB3600CD4243 /* LaunchScreen.storyboard */,
 				A91DBEC22373BB3600CD4243 /* Info.plist */,
+				A99C86A1237D703B009A27C6 /* 礼物资源 */,
 				A91DBEC32373BB3600CD4243 /* main.m */,
 			);
 			path = MP4Reader;
@@ -659,7 +662,7 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		A99C830B237D48F8009A27C6 /* 求婚_png序列 */ = {
+		A99C830B237D48F8009A27C6 /* 求婚png序列 */ = {
 			isa = PBXGroup;
 			children = (
 				A99C8579237D5B54009A27C6 /* 000.png */,
@@ -902,14 +905,51 @@
 				A99C8544237D5B51009A27C6 /* 237.png */,
 				A99C8578237D5B54009A27C6 /* res.apng */,
 			);
-			path = "求婚_png序列";
+			path = "求婚png序列";
 			sourceTree = "<group>";
 		};
 		A99C8696237D5BA7009A27C6 /* 求婚apng */ = {
 			isa = PBXGroup;
 			children = (
+				A99C8699237D6FC8009A27C6 /* 000_iSpt.png */,
 			);
 			path = "求婚apng";
+			sourceTree = "<group>";
+		};
+		A99C869B237D6FD3009A27C6 /* 求婚mp4 */ = {
+			isa = PBXGroup;
+			children = (
+				A91DBECA2373BBFB00CD4243 /* example.mp4 */,
+			);
+			path = "求婚mp4";
+			sourceTree = "<group>";
+		};
+		A99C869C237D7001009A27C6 /* 求婚webp */ = {
+			isa = PBXGroup;
+			children = (
+				A99C869D237D7015009A27C6 /* 000_iSpt.webp */,
+			);
+			path = "求婚webp";
+			sourceTree = "<group>";
+		};
+		A99C869E237D701A009A27C6 /* 求婚gif */ = {
+			isa = PBXGroup;
+			children = (
+				A99C869F237D7034009A27C6 /* 000_iSpt.gif */,
+			);
+			path = "求婚gif";
+			sourceTree = "<group>";
+		};
+		A99C86A1237D703B009A27C6 /* 礼物资源 */ = {
+			isa = PBXGroup;
+			children = (
+				A99C869B237D6FD3009A27C6 /* 求婚mp4 */,
+				A99C8696237D5BA7009A27C6 /* 求婚apng */,
+				A99C830B237D48F8009A27C6 /* 求婚png序列 */,
+				A99C869E237D701A009A27C6 /* 求婚gif */,
+				A99C869C237D7001009A27C6 /* 求婚webp */,
+			);
+			path = "礼物资源";
 			sourceTree = "<group>";
 		};
 		FE8FF60A61CDEA9C0A0158FD /* Pods */ = {
@@ -1073,6 +1113,7 @@
 				A99C85BD237D5B57009A27C6 /* 117.png in Resources */,
 				A99C85B7237D5B57009A27C6 /* 130.png in Resources */,
 				A99C8635237D5B58009A27C6 /* 235.png in Resources */,
+				A99C86A0237D7034009A27C6 /* 000_iSpt.gif in Resources */,
 				A99C862E237D5B58009A27C6 /* 001.png in Resources */,
 				A99C868F237D5B58009A27C6 /* 202.png in Resources */,
 				A99C85AF237D5B57009A27C6 /* 119.png in Resources */,
@@ -1205,6 +1246,7 @@
 				A99C85C6237D5B58009A27C6 /* 124.png in Resources */,
 				A99C85C9237D5B58009A27C6 /* 147.png in Resources */,
 				A99C85D5237D5B58009A27C6 /* 221.png in Resources */,
+				A99C869A237D6FC8009A27C6 /* 000_iSpt.png in Resources */,
 				A99C8656237D5B58009A27C6 /* 099.png in Resources */,
 				A99C867E237D5B58009A27C6 /* 034.png in Resources */,
 				A91DBEBC2373BB3500CD4243 /* Main.storyboard in Resources */,
