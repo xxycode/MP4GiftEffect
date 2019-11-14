@@ -46,7 +46,7 @@
                                 </constraints>
                                 <state key="normal" title="gif"/>
                                 <connections>
-                                    <segue destination="2hl-Pl-m4B" kind="show" id="LFc-4m-xbD"/>
+                                    <segue destination="cuS-3H-EJK" kind="show" id="RXN-e7-CNK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nne-JP-l7d">
@@ -172,13 +172,13 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKp-y2-NHk">
-                                <rect key="frame" x="20" y="108" width="374" height="241"/>
+                                <rect key="frame" x="20" y="108" width="374" height="374"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="KKp-y2-NHk" secondAttribute="height" multiplier="374:241" id="lAv-eG-cQe"/>
+                                    <constraint firstAttribute="width" secondItem="KKp-y2-NHk" secondAttribute="height" multiplier="1:1" id="lAv-eG-cQe"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KKp-y2-NHk" firstAttribute="top" secondItem="INV-5j-WhN" secondAttribute="top" constant="20" id="07e-eT-AQT"/>
                             <constraint firstItem="KKp-y2-NHk" firstAttribute="leading" secondItem="INV-5j-WhN" secondAttribute="leading" constant="20" id="OIB-xe-JKY"/>
@@ -223,14 +223,43 @@
                     <view key="view" contentMode="scaleToFill" id="fbm-Pa-j5C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wxo-U7-9VI" customClass="YYAnimatedImageView">
+                                <rect key="frame" x="20" y="108" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wxo-U7-9VI" secondAttribute="height" multiplier="1:1" id="55P-Pc-ZCc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEF-JB-zT6">
+                                <rect key="frame" x="157" y="802" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5L0-d0-Vgz"/>
+                                    <constraint firstAttribute="width" constant="100" id="c1c-l4-KpQ"/>
+                                </constraints>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="Wkb-3L-6e2" eventType="touchUpInside" id="84q-Bo-8TV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wxo-U7-9VI" firstAttribute="top" secondItem="qur-LY-Lj7" secondAttribute="top" constant="20" id="7vd-32-QWN"/>
+                            <constraint firstItem="wxo-U7-9VI" firstAttribute="leading" secondItem="qur-LY-Lj7" secondAttribute="leading" constant="20" id="G5n-qG-dea"/>
+                            <constraint firstItem="qur-LY-Lj7" firstAttribute="trailing" secondItem="wxo-U7-9VI" secondAttribute="trailing" constant="20" id="YT6-mC-RF4"/>
+                            <constraint firstItem="qur-LY-Lj7" firstAttribute="bottom" secondItem="rEF-JB-zT6" secondAttribute="bottom" constant="20" id="h0h-F0-saA"/>
+                            <constraint firstItem="rEF-JB-zT6" firstAttribute="centerX" secondItem="fbm-Pa-j5C" secondAttribute="centerX" id="iJ6-kh-VyG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qur-LY-Lj7"/>
                     </view>
                     <navigationItem key="navigationItem" title="WebP" id="uGI-YO-VSW"/>
+                    <connections>
+                        <outlet property="imageView" destination="wxo-U7-9VI" id="hAW-CK-xIb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thu-kw-KdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="-207"/>
+            <point key="canvasLocation" x="1079.7101449275362" y="-207.58928571428569"/>
         </scene>
         <!--APNG-->
         <scene sceneID="HzR-jo-g8B">
@@ -239,7 +268,34 @@
                     <view key="view" contentMode="scaleToFill" id="0Uf-OB-hK9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y6P-Fh-guj" customClass="YYAnimatedImageView">
+                                <rect key="frame" x="20" y="108" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Y6P-Fh-guj" secondAttribute="height" multiplier="1:1" id="yFi-cn-haR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6H-dY-S1i">
+                                <rect key="frame" x="157" y="802" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4x0-zd-hFt"/>
+                                    <constraint firstAttribute="width" constant="100" id="DJ9-U9-6cG"/>
+                                </constraints>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="Wkb-3L-6e2" eventType="touchUpInside" id="EMb-xZ-7rW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y6P-Fh-guj" firstAttribute="width" secondItem="Y6P-Fh-guj" secondAttribute="height" multiplier="1:1" id="G2h-L2-teA"/>
+                            <constraint firstItem="JfQ-OA-L2o" firstAttribute="trailing" secondItem="Y6P-Fh-guj" secondAttribute="trailing" constant="20" id="H79-8k-5cq"/>
+                            <constraint firstItem="q6H-dY-S1i" firstAttribute="centerX" secondItem="0Uf-OB-hK9" secondAttribute="centerX" id="Lh8-sP-6vv"/>
+                            <constraint firstItem="JfQ-OA-L2o" firstAttribute="bottom" secondItem="q6H-dY-S1i" secondAttribute="bottom" constant="20" id="Pfk-Xe-tD8"/>
+                            <constraint firstItem="Y6P-Fh-guj" firstAttribute="leading" secondItem="JfQ-OA-L2o" secondAttribute="leading" constant="20" id="YqR-uV-yVo"/>
+                            <constraint firstItem="Y6P-Fh-guj" firstAttribute="top" secondItem="JfQ-OA-L2o" secondAttribute="top" constant="20" id="pes-je-MCU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JfQ-OA-L2o"/>
                     </view>
                     <navigationItem key="navigationItem" title="APNG" id="pVi-Uy-0oZ"/>
@@ -247,22 +303,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfR-Qs-ELD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080" y="495"/>
-        </scene>
-        <!--GIF-->
-        <scene sceneID="luU-n3-NXK">
-            <objects>
-                <viewController id="2hl-Pl-m4B" customClass="GIFViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IM9-S2-0IL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="WuB-F0-2af"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="GIF" id="g1u-e9-Vca"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QEz-23-keo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1080" y="1221"/>
         </scene>
         <!--Lottie-->
         <scene sceneID="kSe-Lz-wcj">
@@ -279,6 +319,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zm1-Me-W3p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080" y="1938"/>
+        </scene>
+        <!--Gif-->
+        <scene sceneID="nJX-lH-Qm4">
+            <objects>
+                <viewController id="cuS-3H-EJK" customClass="GIFViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xia-hZ-bt7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Py1-LX-VGg" customClass="YYAnimatedImageView">
+                                <rect key="frame" x="20" y="108" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Py1-LX-VGg" secondAttribute="height" multiplier="1:1" id="GS0-n7-lyQ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWP-zG-7LL">
+                                <rect key="frame" x="157" y="802" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ClP-lY-1q5"/>
+                                    <constraint firstAttribute="height" constant="40" id="zbb-OD-zaE"/>
+                                </constraints>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="Wkb-3L-6e2" eventType="touchUpInside" id="5Il-Fv-Pie"/>
+                                    <action selector="playAction:" destination="cuS-3H-EJK" eventType="touchUpInside" id="ba6-Nq-WCe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GWP-zG-7LL" firstAttribute="centerX" secondItem="Xia-hZ-bt7" secondAttribute="centerX" id="42w-hK-IBE"/>
+                            <constraint firstItem="Py1-LX-VGg" firstAttribute="width" secondItem="Py1-LX-VGg" secondAttribute="height" multiplier="1:1" id="5dq-As-N6d"/>
+                            <constraint firstItem="n1n-nM-mUJ" firstAttribute="bottom" secondItem="GWP-zG-7LL" secondAttribute="bottom" constant="20" id="J2n-4H-uNe"/>
+                            <constraint firstItem="Py1-LX-VGg" firstAttribute="top" secondItem="n1n-nM-mUJ" secondAttribute="top" constant="20" id="gf0-T4-IKs"/>
+                            <constraint firstItem="Py1-LX-VGg" firstAttribute="leading" secondItem="n1n-nM-mUJ" secondAttribute="leading" constant="20" id="qtr-X9-Ejq"/>
+                            <constraint firstItem="n1n-nM-mUJ" firstAttribute="trailing" secondItem="Py1-LX-VGg" secondAttribute="trailing" constant="20" id="slM-XX-2sd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n1n-nM-mUJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gif" id="uVa-oo-JTu"/>
+                    <connections>
+                        <outlet property="imageView" destination="Py1-LX-VGg" id="yKA-a3-FOR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vLr-gm-Obq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="1240"/>
         </scene>
     </scenes>
 </document>
