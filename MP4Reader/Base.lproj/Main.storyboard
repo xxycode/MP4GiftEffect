@@ -35,7 +35,7 @@
                                 </constraints>
                                 <state key="normal" title="lottie"/>
                                 <connections>
-                                    <segue destination="d4e-Eh-kwt" kind="show" id="n9r-FG-MMs"/>
+                                    <segue destination="XAo-UX-bbs" kind="show" id="whk-C0-Dnq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzB-1v-xKP">
@@ -308,22 +308,6 @@
             </objects>
             <point key="canvasLocation" x="1080" y="495"/>
         </scene>
-        <!--Lottie-->
-        <scene sceneID="kSe-Lz-wcj">
-            <objects>
-                <viewController id="d4e-Eh-kwt" customClass="LottieViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="07O-Il-vcA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="LhW-nW-bne"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Lottie" id="2LG-fv-ggl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zm1-Me-W3p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1080" y="1938"/>
-        </scene>
         <!--Gif-->
         <scene sceneID="nJX-lH-Qm4">
             <objects>
@@ -370,6 +354,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLr-gm-Obq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080" y="1240"/>
+        </scene>
+        <!--Lottie-->
+        <scene sceneID="Xhk-1p-2V1">
+            <objects>
+                <viewController id="XAo-UX-bbs" customClass="LottieViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zdc-Ls-mmv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6Q-qe-9rZ">
+                                <rect key="frame" x="157" y="802" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7a7-Kb-v7t"/>
+                                    <constraint firstAttribute="height" constant="40" id="7uL-Vf-e1z"/>
+                                </constraints>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="Wkb-3L-6e2" eventType="touchUpInside" id="0u6-KG-V4L"/>
+                                    <action selector="playAction:" destination="XAo-UX-bbs" eventType="touchUpInside" id="Bs2-M7-aIh"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjJ-Rx-Zpc" customClass="LOTAnimationView">
+                                <rect key="frame" x="20" y="108" width="374" height="374"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tjJ-Rx-Zpc" secondAttribute="height" multiplier="1:1" id="0p8-37-rxd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J6Q-qe-9rZ" firstAttribute="centerX" secondItem="Zdc-Ls-mmv" secondAttribute="centerX" id="4so-q5-BYc"/>
+                            <constraint firstItem="tjJ-Rx-Zpc" firstAttribute="top" secondItem="e78-lT-INk" secondAttribute="top" constant="20" id="K25-V1-61N"/>
+                            <constraint firstItem="e78-lT-INk" firstAttribute="trailing" secondItem="tjJ-Rx-Zpc" secondAttribute="trailing" constant="20" id="SGX-JD-B4R"/>
+                            <constraint firstItem="tjJ-Rx-Zpc" firstAttribute="centerX" secondItem="Zdc-Ls-mmv" secondAttribute="centerX" id="eYv-gf-QNE"/>
+                            <constraint firstItem="e78-lT-INk" firstAttribute="bottom" secondItem="J6Q-qe-9rZ" secondAttribute="bottom" constant="20" id="ljB-0S-q56"/>
+                            <constraint firstItem="tjJ-Rx-Zpc" firstAttribute="leading" secondItem="e78-lT-INk" secondAttribute="leading" constant="20" id="nLK-5n-NaW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e78-lT-INk"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lottie" id="RB9-ZN-at5"/>
+                    <connections>
+                        <outlet property="animationView" destination="tjJ-Rx-Zpc" id="HTT-SR-xZN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l6l-cu-KKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="1946"/>
         </scene>
     </scenes>
 </document>
