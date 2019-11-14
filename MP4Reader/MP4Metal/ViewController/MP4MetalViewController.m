@@ -40,11 +40,11 @@
     // center _metalView horizontally in self.view
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_metalView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
     // align _metalView from the top
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_metalView]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_metalView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[_metalView]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_metalView)]];
     // width constraint
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_metalView(==307)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_metalView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_metalView(==330)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_metalView)]];
     // height constraint
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_metalView(==240)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_metalView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_metalView(==330)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_metalView)]];
 
 }
 
