@@ -23,13 +23,9 @@
 - (IBAction)playAction:(id)sender {
     //qiuhun_00025
     NSMutableArray *arr = @[].mutableCopy;
-    for (int i = 25; i <= 237; ++i) {
+    for (int i = 0; i < 238; ++i) {
         @autoreleasepool {
-            NSString *namePrefix = @"qiuhun_00";
-            if (i < 100) {
-                namePrefix = @"qiuhun_000";
-            }
-            NSString *fullName = [NSString stringWithFormat:@"%@%d.png", namePrefix, i];
+            NSString *fullName = [NSString stringWithFormat:@"%03d.png", i];
             UIImage *image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:fullName ofType:nil]];
             if (image) {
                 [arr addObject:image];
