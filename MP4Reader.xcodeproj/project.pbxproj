@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0031F9F5D93E47C2B68CCD91 /* libPods-MP4Reader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7259D3FABDFE383940CF58 /* libPods-MP4Reader.a */; };
 		A91DBEB32373BB3500CD4243 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBEB22373BB3500CD4243 /* AppDelegate.m */; };
 		A91DBEB62373BB3500CD4243 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBEB52373BB3500CD4243 /* SceneDelegate.m */; };
 		A91DBEB92373BB3500CD4243 /* MP4MetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBEB82373BB3500CD4243 /* MP4MetalViewController.m */; };
@@ -266,6 +267,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E95E4BA31CBAE6794F1643C /* Pods-MP4Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP4Reader.release.xcconfig"; path = "Pods/Target Support Files/Pods-MP4Reader/Pods-MP4Reader.release.xcconfig"; sourceTree = "<group>"; };
 		A91DBEAE2373BB3500CD4243 /* MP4Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MP4Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91DBEB12373BB3500CD4243 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A91DBEB22373BB3500CD4243 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -536,6 +538,8 @@
 		A9FC6D37237AAE740036CB29 /* XYShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYShaderTypes.h; sourceTree = "<group>"; };
 		A9FC6D39237B96210036CB29 /* NKMTKView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKMTKView.h; sourceTree = "<group>"; };
 		A9FC6D3A237B96210036CB29 /* NKMTKView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKMTKView.m; sourceTree = "<group>"; };
+		CFB4263432BD8E69A827192C /* Pods-MP4Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP4Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MP4Reader/Pods-MP4Reader.debug.xcconfig"; sourceTree = "<group>"; };
+		FF7259D3FABDFE383940CF58 /* libPods-MP4Reader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MP4Reader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,17 +547,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0031F9F5D93E47C2B68CCD91 /* libPods-MP4Reader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C3640BAB87BB0834B06D00E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF7259D3FABDFE383940CF58 /* libPods-MP4Reader.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A91DBEA52373BB3500CD4243 = {
 			isa = PBXGroup;
 			children = (
 				A91DBEB02373BB3500CD4243 /* MP4Reader */,
 				A91DBEAF2373BB3500CD4243 /* Products */,
+				FE8FF60A61CDEA9C0A0158FD /* Pods */,
+				5C3640BAB87BB0834B06D00E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -897,6 +912,15 @@
 			path = "求婚apng";
 			sourceTree = "<group>";
 		};
+		FE8FF60A61CDEA9C0A0158FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFB4263432BD8E69A827192C /* Pods-MP4Reader.debug.xcconfig */,
+				8E95E4BA31CBAE6794F1643C /* Pods-MP4Reader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -904,6 +928,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A91DBEC72373BB3600CD4243 /* Build configuration list for PBXNativeTarget "MP4Reader" */;
 			buildPhases = (
+				2988EBE0245F89AD1182388B /* [CP] Check Pods Manifest.lock */,
 				A91DBEAA2373BB3500CD4243 /* Sources */,
 				A91DBEAB2373BB3500CD4243 /* Frameworks */,
 				A91DBEAC2373BB3500CD4243 /* Resources */,
@@ -1202,6 +1227,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2988EBE0245F89AD1182388B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MP4Reader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A91DBEAA2373BB3500CD4243 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1357,6 +1403,7 @@
 		};
 		A91DBEC82373BB3600CD4243 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFB4263432BD8E69A827192C /* Pods-MP4Reader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1374,6 +1421,7 @@
 		};
 		A91DBEC92373BB3600CD4243 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E95E4BA31CBAE6794F1643C /* Pods-MP4Reader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
