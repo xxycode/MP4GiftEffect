@@ -38,6 +38,20 @@ def deleteFile(filePath):
 	if os.path.exists(filePath):
 		os.remove(filePath)
 
+def openImage(image_path):
+	image = Image.open(image_path)
+	width, height = image.size
+	maxWidth = 500.0
+	if width <= maxWidth:
+		return image
+	else:
+		scale = maxWidth / width
+		width = int(width * scale)
+		height = int(height * scale)
+		image = image.resize((width, height))
+		return image
+
+
 def generalMP4(filePath):
 	paths = gl.glob(os.path.join(filePath, '*.png'))
 	paths.sort()
@@ -47,7 +61,7 @@ def generalMP4(filePath):
 	conerted_images = []
 	i = 0
 	for image_path in paths:
-		conerted_image = convertImage(Image.open(image_path))
+		conerted_image = convertImage(openImage(image_path))
 		conerted_images.append(conerted_image)
 
 	fps = 24
