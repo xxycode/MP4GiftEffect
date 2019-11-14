@@ -109,7 +109,13 @@
 - (void)clean {
     self.paused = YES;
     [self releaseDrawables];
-    
+    self.texture = nil;
+    CVMetalTextureCacheFlush(self.textureCache, 0);
+}
+
+- (void)dealloc {
+    [self clean];
+    NSLog(@"%s", __func__);
 }
 
 #pragma mark - delegate

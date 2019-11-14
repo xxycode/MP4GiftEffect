@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		A91DBEB32373BB3500CD4243 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBEB22373BB3500CD4243 /* AppDelegate.m */; };
 		A91DBEB62373BB3500CD4243 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBEB52373BB3500CD4243 /* SceneDelegate.m */; };
-		A91DBEB92373BB3500CD4243 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBEB82373BB3500CD4243 /* ViewController.m */; };
+		A91DBEB92373BB3500CD4243 /* MP4MetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBEB82373BB3500CD4243 /* MP4MetalViewController.m */; };
 		A91DBEBC2373BB3500CD4243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A91DBEBA2373BB3500CD4243 /* Main.storyboard */; };
 		A91DBEBE2373BB3600CD4243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A91DBEBD2373BB3600CD4243 /* Assets.xcassets */; };
 		A91DBEC12373BB3600CD4243 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A91DBEBF2373BB3600CD4243 /* LaunchScreen.storyboard */; };
 		A91DBEC42373BB3600CD4243 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBEC32373BB3600CD4243 /* main.m */; };
 		A91DBECB2373BBFB00CD4243 /* example.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A91DBECA2373BBFB00CD4243 /* example.mp4 */; };
 		A91DBECE2373BD0B00CD4243 /* MP4Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = A91DBECD2373BD0B00CD4243 /* MP4Reader.m */; };
+		A99C82F7237D4239009A27C6 /* PNGSequenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C82F6237D4239009A27C6 /* PNGSequenceViewController.m */; };
+		A99C82FA237D42B2009A27C6 /* WebPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C82F9237D42B2009A27C6 /* WebPViewController.m */; };
+		A99C82FD237D42E3009A27C6 /* APNGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C82FC237D42E3009A27C6 /* APNGViewController.m */; };
+		A99C8300237D4316009A27C6 /* GIFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C82FF237D4316009A27C6 /* GIFViewController.m */; };
+		A99C8303237D4375009A27C6 /* LottieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C8302237D4375009A27C6 /* LottieViewController.m */; };
 		A9FC6D35237AAE3A0036CB29 /* XYMetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6D33237AAE3A0036CB29 /* XYMetalView.m */; };
 		A9FC6D38237AAE740036CB29 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6D36237AAE740036CB29 /* Shaders.metal */; };
 		A9FC6D3B237B96210036CB29 /* NKMTKView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6D3A237B96210036CB29 /* NKMTKView.m */; };
@@ -27,8 +32,8 @@
 		A91DBEB22373BB3500CD4243 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A91DBEB42373BB3500CD4243 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A91DBEB52373BB3500CD4243 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A91DBEB72373BB3500CD4243 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A91DBEB82373BB3500CD4243 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A91DBEB72373BB3500CD4243 /* MP4MetalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MP4MetalViewController.h; sourceTree = "<group>"; };
+		A91DBEB82373BB3500CD4243 /* MP4MetalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MP4MetalViewController.m; sourceTree = "<group>"; };
 		A91DBEBB2373BB3500CD4243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A91DBEBD2373BB3600CD4243 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A91DBEC02373BB3600CD4243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +42,16 @@
 		A91DBECA2373BBFB00CD4243 /* example.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.mp4; sourceTree = "<group>"; };
 		A91DBECC2373BD0B00CD4243 /* MP4Reader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MP4Reader.h; sourceTree = "<group>"; };
 		A91DBECD2373BD0B00CD4243 /* MP4Reader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MP4Reader.m; sourceTree = "<group>"; };
+		A99C82F5237D4239009A27C6 /* PNGSequenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNGSequenceViewController.h; sourceTree = "<group>"; };
+		A99C82F6237D4239009A27C6 /* PNGSequenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNGSequenceViewController.m; sourceTree = "<group>"; };
+		A99C82F8237D42B2009A27C6 /* WebPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPViewController.h; sourceTree = "<group>"; };
+		A99C82F9237D42B2009A27C6 /* WebPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPViewController.m; sourceTree = "<group>"; };
+		A99C82FB237D42E3009A27C6 /* APNGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APNGViewController.h; sourceTree = "<group>"; };
+		A99C82FC237D42E3009A27C6 /* APNGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APNGViewController.m; sourceTree = "<group>"; };
+		A99C82FE237D4316009A27C6 /* GIFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIFViewController.h; sourceTree = "<group>"; };
+		A99C82FF237D4316009A27C6 /* GIFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIFViewController.m; sourceTree = "<group>"; };
+		A99C8301237D4375009A27C6 /* LottieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottieViewController.h; sourceTree = "<group>"; };
+		A99C8302237D4375009A27C6 /* LottieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LottieViewController.m; sourceTree = "<group>"; };
 		A9FC6D33237AAE3A0036CB29 /* XYMetalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMetalView.m; sourceTree = "<group>"; };
 		A9FC6D34237AAE3A0036CB29 /* XYMetalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYMetalView.h; sourceTree = "<group>"; };
 		A9FC6D36237AAE740036CB29 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
@@ -79,8 +94,18 @@
 				A91DBEB22373BB3500CD4243 /* AppDelegate.m */,
 				A91DBEB42373BB3500CD4243 /* SceneDelegate.h */,
 				A91DBEB52373BB3500CD4243 /* SceneDelegate.m */,
-				A91DBEB72373BB3500CD4243 /* ViewController.h */,
-				A91DBEB82373BB3500CD4243 /* ViewController.m */,
+				A91DBEB72373BB3500CD4243 /* MP4MetalViewController.h */,
+				A91DBEB82373BB3500CD4243 /* MP4MetalViewController.m */,
+				A99C82F5237D4239009A27C6 /* PNGSequenceViewController.h */,
+				A99C82F6237D4239009A27C6 /* PNGSequenceViewController.m */,
+				A99C82F8237D42B2009A27C6 /* WebPViewController.h */,
+				A99C82F9237D42B2009A27C6 /* WebPViewController.m */,
+				A99C82FB237D42E3009A27C6 /* APNGViewController.h */,
+				A99C82FC237D42E3009A27C6 /* APNGViewController.m */,
+				A99C82FE237D4316009A27C6 /* GIFViewController.h */,
+				A99C82FF237D4316009A27C6 /* GIFViewController.m */,
+				A99C8301237D4375009A27C6 /* LottieViewController.h */,
+				A99C8302237D4375009A27C6 /* LottieViewController.m */,
 				A9FC6D39237B96210036CB29 /* NKMTKView.h */,
 				A9FC6D3A237B96210036CB29 /* NKMTKView.m */,
 				A9FC6D36237AAE740036CB29 /* Shaders.metal */,
@@ -170,14 +195,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A99C82FA237D42B2009A27C6 /* WebPViewController.m in Sources */,
 				A91DBECE2373BD0B00CD4243 /* MP4Reader.m in Sources */,
 				A9FC6D38237AAE740036CB29 /* Shaders.metal in Sources */,
 				A9FC6D35237AAE3A0036CB29 /* XYMetalView.m in Sources */,
-				A91DBEB92373BB3500CD4243 /* ViewController.m in Sources */,
+				A91DBEB92373BB3500CD4243 /* MP4MetalViewController.m in Sources */,
 				A91DBEB32373BB3500CD4243 /* AppDelegate.m in Sources */,
 				A91DBEC42373BB3600CD4243 /* main.m in Sources */,
+				A99C82FD237D42E3009A27C6 /* APNGViewController.m in Sources */,
 				A9FC6D3B237B96210036CB29 /* NKMTKView.m in Sources */,
 				A91DBEB62373BB3500CD4243 /* SceneDelegate.m in Sources */,
+				A99C82F7237D4239009A27C6 /* PNGSequenceViewController.m in Sources */,
+				A99C8303237D4375009A27C6 /* LottieViewController.m in Sources */,
+				A99C8300237D4316009A27C6 /* GIFViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

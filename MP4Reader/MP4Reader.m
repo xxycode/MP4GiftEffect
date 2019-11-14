@@ -61,17 +61,15 @@
 
 - (CMSampleBufferRef)readBuffer {
     CMSampleBufferRef sampleBufferRef = nil;
-    @synchronized (self) {
-        if (self.readerVideoTrackOutput) {
-            sampleBufferRef = [self.readerVideoTrackOutput copyNextSampleBuffer];
-        }
-        
-        if (self.reader && self.reader.status == AVAssetReaderStatusCompleted) {
-            self.readerVideoTrackOutput = nil;
-            self.reader = nil;
-            if (self.delegate && [self.delegate respondsToSelector:@selector(MP4ReaderDidFinishedReadFile:)]) {
-                [self.delegate MP4ReaderDidFinishedReadFile:self];
-            }
+    if (self.readerVideoTrackOutput) {
+        sampleBufferRef = [self.readerVideoTrackOutput copyNextSampleBuffer];
+    }
+    
+    if (self.reader && self.reader.status == AVAssetReaderStatusCompleted) {
+        self.readerVideoTrackOutput = nil;
+        self.reader = nil;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(MP4ReaderDidFinishedReadFile:)]) {
+            [self.delegate MP4ReaderDidFinishedReadFile:self];
         }
     }
     if (sampleBufferRef) {
