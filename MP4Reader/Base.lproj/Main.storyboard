@@ -284,6 +284,7 @@
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playAction:" destination="Wkb-3L-6e2" eventType="touchUpInside" id="EMb-xZ-7rW"/>
+                                    <action selector="playAction:" destination="311-c5-nxM" eventType="touchUpInside" id="ZKJ-eO-ISW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -299,6 +300,9 @@
                         <viewLayoutGuide key="safeArea" id="JfQ-OA-L2o"/>
                     </view>
                     <navigationItem key="navigationItem" title="APNG" id="pVi-Uy-0oZ"/>
+                    <connections>
+                        <outlet property="imageView" destination="Y6P-Fh-guj" id="6kh-qQ-v0L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfR-Qs-ELD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

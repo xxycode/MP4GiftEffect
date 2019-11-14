@@ -589,16 +589,10 @@
 		A91DBEB02373BB3500CD4243 /* MP4Reader */ = {
 			isa = PBXGroup;
 			children = (
-				A91DBEB12373BB3500CD4243 /* AppDelegate.h */,
-				A91DBEB22373BB3500CD4243 /* AppDelegate.m */,
-				A91DBEB42373BB3500CD4243 /* SceneDelegate.h */,
-				A91DBEB52373BB3500CD4243 /* SceneDelegate.m */,
-				A99C82FE237D4316009A27C6 /* GIFViewController.h */,
-				A99C82FF237D4316009A27C6 /* GIFViewController.m */,
+				A9BABDC4237D764B002AFF33 /* APP */,
 				A99C8301237D4375009A27C6 /* LottieViewController.h */,
 				A99C8302237D4375009A27C6 /* LottieViewController.m */,
-				A99C82FB237D42E3009A27C6 /* APNGViewController.h */,
-				A99C82FC237D42E3009A27C6 /* APNGViewController.m */,
+				A9BABDC3237D7641002AFF33 /* GIF */,
 				A9347C09237D73AD00577C08 /* APNG */,
 				A99C86A2237D7150009A27C6 /* WebP */,
 				A99C8307237D4572009A27C6 /* PNGSequence */,
@@ -616,6 +610,8 @@
 		A9347C09237D73AD00577C08 /* APNG */ = {
 			isa = PBXGroup;
 			children = (
+				A99C82FB237D42E3009A27C6 /* APNGViewController.h */,
+				A99C82FC237D42E3009A27C6 /* APNGViewController.m */,
 			);
 			path = APNG;
 			sourceTree = "<group>";
@@ -967,6 +963,26 @@
 				A99C82F9237D42B2009A27C6 /* WebPViewController.m */,
 			);
 			path = WebP;
+			sourceTree = "<group>";
+		};
+		A9BABDC3237D7641002AFF33 /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				A99C82FE237D4316009A27C6 /* GIFViewController.h */,
+				A99C82FF237D4316009A27C6 /* GIFViewController.m */,
+			);
+			path = GIF;
+			sourceTree = "<group>";
+		};
+		A9BABDC4237D764B002AFF33 /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				A91DBEB12373BB3500CD4243 /* AppDelegate.h */,
+				A91DBEB22373BB3500CD4243 /* AppDelegate.m */,
+				A91DBEB42373BB3500CD4243 /* SceneDelegate.h */,
+				A91DBEB52373BB3500CD4243 /* SceneDelegate.m */,
+			);
+			path = APP;
 			sourceTree = "<group>";
 		};
 		FE8FF60A61CDEA9C0A0158FD /* Pods */ = {
