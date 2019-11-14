@@ -94,10 +94,6 @@
 				A91DBEB22373BB3500CD4243 /* AppDelegate.m */,
 				A91DBEB42373BB3500CD4243 /* SceneDelegate.h */,
 				A91DBEB52373BB3500CD4243 /* SceneDelegate.m */,
-				A91DBEB72373BB3500CD4243 /* MP4MetalViewController.h */,
-				A91DBEB82373BB3500CD4243 /* MP4MetalViewController.m */,
-				A99C82F5237D4239009A27C6 /* PNGSequenceViewController.h */,
-				A99C82F6237D4239009A27C6 /* PNGSequenceViewController.m */,
 				A99C82F8237D42B2009A27C6 /* WebPViewController.h */,
 				A99C82F9237D42B2009A27C6 /* WebPViewController.m */,
 				A99C82FB237D42E3009A27C6 /* APNGViewController.h */,
@@ -106,14 +102,8 @@
 				A99C82FF237D4316009A27C6 /* GIFViewController.m */,
 				A99C8301237D4375009A27C6 /* LottieViewController.h */,
 				A99C8302237D4375009A27C6 /* LottieViewController.m */,
-				A9FC6D39237B96210036CB29 /* NKMTKView.h */,
-				A9FC6D3A237B96210036CB29 /* NKMTKView.m */,
-				A9FC6D36237AAE740036CB29 /* Shaders.metal */,
-				A9FC6D37237AAE740036CB29 /* XYShaderTypes.h */,
-				A9FC6D34237AAE3A0036CB29 /* XYMetalView.h */,
-				A9FC6D33237AAE3A0036CB29 /* XYMetalView.m */,
-				A91DBECC2373BD0B00CD4243 /* MP4Reader.h */,
-				A91DBECD2373BD0B00CD4243 /* MP4Reader.m */,
+				A99C8307237D4572009A27C6 /* PNGSequence */,
+				A99C8305237D4544009A27C6 /* MP4Metal */,
 				A91DBEBA2373BB3500CD4243 /* Main.storyboard */,
 				A91DBECA2373BBFB00CD4243 /* example.mp4 */,
 				A91DBEBD2373BB3600CD4243 /* Assets.xcassets */,
@@ -122,6 +112,56 @@
 				A91DBEC32373BB3600CD4243 /* main.m */,
 			);
 			path = MP4Reader;
+			sourceTree = "<group>";
+		};
+		A99C8304237D4525009A27C6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A91DBEB72373BB3500CD4243 /* MP4MetalViewController.h */,
+				A91DBEB82373BB3500CD4243 /* MP4MetalViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A99C8305237D4544009A27C6 /* MP4Metal */ = {
+			isa = PBXGroup;
+			children = (
+				A99C8306237D455E009A27C6 /* View */,
+				A99C8304237D4525009A27C6 /* ViewController */,
+			);
+			path = MP4Metal;
+			sourceTree = "<group>";
+		};
+		A99C8306237D455E009A27C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC6D39237B96210036CB29 /* NKMTKView.h */,
+				A9FC6D3A237B96210036CB29 /* NKMTKView.m */,
+				A9FC6D36237AAE740036CB29 /* Shaders.metal */,
+				A9FC6D37237AAE740036CB29 /* XYShaderTypes.h */,
+				A9FC6D34237AAE3A0036CB29 /* XYMetalView.h */,
+				A9FC6D33237AAE3A0036CB29 /* XYMetalView.m */,
+				A91DBECC2373BD0B00CD4243 /* MP4Reader.h */,
+				A91DBECD2373BD0B00CD4243 /* MP4Reader.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A99C8307237D4572009A27C6 /* PNGSequence */ = {
+			isa = PBXGroup;
+			children = (
+				A99C8308237D4581009A27C6 /* ViewController */,
+			);
+			path = PNGSequence;
+			sourceTree = "<group>";
+		};
+		A99C8308237D4581009A27C6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A99C82F5237D4239009A27C6 /* PNGSequenceViewController.h */,
+				A99C82F6237D4239009A27C6 /* PNGSequenceViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

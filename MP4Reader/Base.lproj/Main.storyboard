@@ -159,14 +159,43 @@
                     <view key="view" contentMode="scaleToFill" id="Mcw-3W-iqd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3g-ON-jXQ">
+                                <rect key="frame" x="157" y="773" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="XAv-Vk-ZJ1"/>
+                                    <constraint firstAttribute="height" constant="40" id="hRJ-vY-aLh"/>
+                                </constraints>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="1R9-Dl-mb6" eventType="touchUpInside" id="Hgg-7t-gPN"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKp-y2-NHk">
+                                <rect key="frame" x="20" y="108" width="374" height="241"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KKp-y2-NHk" secondAttribute="height" multiplier="374:241" id="lAv-eG-cQe"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KKp-y2-NHk" firstAttribute="top" secondItem="INV-5j-WhN" secondAttribute="top" constant="20" id="07e-eT-AQT"/>
+                            <constraint firstItem="KKp-y2-NHk" firstAttribute="leading" secondItem="INV-5j-WhN" secondAttribute="leading" constant="20" id="OIB-xe-JKY"/>
+                            <constraint firstItem="A3g-ON-jXQ" firstAttribute="centerX" secondItem="Mcw-3W-iqd" secondAttribute="centerX" id="T8A-uW-LNH"/>
+                            <constraint firstItem="INV-5j-WhN" firstAttribute="trailing" secondItem="KKp-y2-NHk" secondAttribute="trailing" constant="20" id="Ulo-Hm-rrN"/>
+                            <constraint firstItem="INV-5j-WhN" firstAttribute="bottom" secondItem="A3g-ON-jXQ" secondAttribute="bottom" constant="49" id="qMB-kV-rUU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="INV-5j-WhN"/>
                     </view>
                     <navigationItem key="navigationItem" title="PNG Sequence" id="cqI-eQ-x9v"/>
+                    <connections>
+                        <outlet property="imageView" destination="KKp-y2-NHk" id="jOf-BP-BmS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ytg-e7-hPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="-923"/>
+            <point key="canvasLocation" x="1079.7101449275362" y="-923.4375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wsn-lK-BnZ">
